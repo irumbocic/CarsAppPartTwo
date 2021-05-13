@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-
+using Project.Model.Common;
 
 namespace Project.WebAPI.Profiles
 {
-    public class MakeProfile : Profile
+    public class WebApiProfile : Profile
     {
-        public MakeProfile()
+        public WebApiProfile()
         {
             CreateMap<VehicleMake, VehicleMakeDto>()
                .ReverseMap();
@@ -20,6 +20,9 @@ namespace Project.WebAPI.Profiles
               .ReverseMap();
             CreateMap<VehicleMake, VehicleMakeEntity>()
               .ReverseMap();
+            CreateMap<IVehicleMake, VehicleMakeDto>()
+               .ReverseMap();
+
         }
     }
 }

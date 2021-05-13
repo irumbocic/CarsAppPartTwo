@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Project.DAL;
+using Project.Repository;
 using Project.WebAPI.Dependency;
 using Project.WebAPI.Profiles;
 using System;
@@ -45,9 +46,10 @@ namespace Project.WebAPI
             services.AddOptions();
             var config = new MapperConfiguration(c =>
             {
-                c.AddProfile(new ModelProfile());
-                c.AddProfile(new MakeProfile());
+                c.AddProfile(new RepositoryProfile()); // MISLIM DA MI OVAJ NE TREBA TU
+                c.AddProfile(new WebApiProfile());
             });
+
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
         }

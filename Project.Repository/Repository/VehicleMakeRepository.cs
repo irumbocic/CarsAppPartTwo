@@ -1,4 +1,6 @@
-﻿using Project.DAL.Entities;
+﻿using AutoMapper;
+using Project.DAL.Entities;
+using Project.Model;
 using Project.Repository.Common;
 using System;
 using System.Collections.Generic;
@@ -8,9 +10,11 @@ using System.Threading.Tasks;
 namespace Project.Repository.Repository
 
 {
+
     public class VehicleMakeRepository : IVehicleMakeRepository
     {
-        private readonly VehicleRepository<VehicleMakeEntity> repository;
+
+        public VehicleRepository<VehicleMakeEntity> repository;
 
         public VehicleMakeRepository(VehicleRepository<VehicleMakeEntity> repository)
         {
@@ -19,6 +23,7 @@ namespace Project.Repository.Repository
 
         public async Task<VehicleMakeEntity> CreteAsync(VehicleMakeEntity newItem)
         {
+
             return await repository.CreteAsync(newItem);
         }
         public async Task<VehicleMakeEntity> DeleteAsync(int id)

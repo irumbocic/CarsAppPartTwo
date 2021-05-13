@@ -9,13 +9,12 @@ namespace Project.Repository.Repository
 {
     public class VehicleRepository<T> : IVehicleRepository<T> where T: class
     {
-        private readonly VehicleContext context;
+        public VehicleContext context; // SMije li biti public?
 
         public VehicleRepository(VehicleContext context)
         {
             this.context = context;
         }
-
 
         public async Task<T> CreteAsync(T newItem)
         {

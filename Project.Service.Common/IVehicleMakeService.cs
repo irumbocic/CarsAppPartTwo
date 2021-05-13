@@ -1,13 +1,15 @@
 ﻿using Project.DAL.Entities;
+using Project.Model;
+using Project.Model.Common;
 using System.Threading.Tasks;
 
 namespace Project.Service.Common
 {
     public interface IVehicleMakeService
     {
-        Task<VehicleMakeEntity> CreteAsync(VehicleMakeEntity newItem);
-        Task<VehicleMakeEntity> DeleteAsync(int id);
-        Task<VehicleMakeEntity> GetAsync(int id);
-        Task<VehicleMakeEntity> UpdateAsync(VehicleMakeEntity updatedItem);
+        Task<VehicleMake> CreteAsync(VehicleMake newItem);
+        Task<VehicleMake> DeleteAsync(int id);
+        Task<VehicleMake> GetAsync(int id);
+        Task<VehicleMake> UpdateAsync(VehicleMake updatedItem);
     }
 }

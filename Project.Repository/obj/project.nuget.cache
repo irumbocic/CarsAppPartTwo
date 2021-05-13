@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "U+iH85qh4zmisIufQglFmFqoMgq3chfEomVARsU2IprUTiPD/S8dL255OVTVBgQgK+tNbOAYhXk3njYTVEAXVA==",
+  "dgSpecHash": "8AiRf9uFn46o/XCFuRUbKiWKkrbC6sLDC8nv8vDSnrupQ/qbe+TcELFEIRDoLDL9QyHlvzo133epjTG7rFu2xw==",
   "success": true,
   "projectFilePath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivana\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\ivana\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\ivana\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\ivana\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\ivana\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

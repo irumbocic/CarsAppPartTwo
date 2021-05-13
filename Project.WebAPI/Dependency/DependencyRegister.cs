@@ -1,4 +1,7 @@
 ﻿using Autofac;
+using AutoMapper;
+using Project.DAL.Entities;
+using Project.Model;
 using Project.Repository.Repository;
 using Project.Service;
 using Project.Service.Common;
@@ -21,6 +24,7 @@ namespace Project.WebAPI.Dependency
             builder.RegisterGeneric(typeof(VehicleRepository<>))
                     //.As(typeof(IVehicleRepository<>))
                     .InstancePerLifetimeScope();
+
         }
     }
 }

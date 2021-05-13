@@ -75,3 +75,4 @@ D:\zadatak2\CarsAppPartTwo\Project.WebAPI\bin\Debug\net5.0\AutoMapper.dll
 D:\zadatak2\CarsAppPartTwo\Project.WebAPI\bin\Debug\net5.0\Autofac.dll
 D:\zadatak2\CarsAppPartTwo\Project.WebAPI\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
 D:\zadatak2\CarsAppPartTwo\Project.WebAPI\bin\Debug\net5.0\Autofac.Integration.WebApi.dll
+D:\zadatak2\CarsAppPartTwo\Project.WebAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

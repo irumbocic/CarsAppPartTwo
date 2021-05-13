@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Project.DAL.Entities;
+using Project.Model;
 using Project.Service.Common;
 using Project.WebAPI.Dto;
 using System;
@@ -53,9 +54,10 @@ namespace Project.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(VehicleMakeDto newMakeDto)
         {
-            var newMake = await vehicleMakeService.CreteAsync(mapper.Map<VehicleMakeEntity>(newMakeDto));
+            var newMake = await vehicleMakeService.CreteAsync(mapper.Map<VehicleMake>(newMakeDto));
 
             var readMakeDto = mapper.Map<VehicleMakeDto>(newMake);
+
 
             return CreatedAtRoute(nameof(Get), new { Id = readMakeDto.Id }, readMakeDto);
         }
@@ -70,7 +72,7 @@ namespace Project.WebAPI.Controllers
             {
                 return NotFound();
             }
-            var updatedMake = await vehicleMakeService.UpdateAsync(mapper.Map<VehicleMakeEntity>(updatedMakeDto));
+            var updatedMake = await vehicleMakeService.UpdateAsync(mapper.Map<VehicleMake>(updatedMakeDto));
             return Ok(mapper.Map<VehicleMakeDto>(updatedMake));
         }
 
