@@ -1,0 +1,12 @@
+D:\zadatak2\CarsAppPartTwo\Project.DAL\bin\Debug\netcoreapp3.1\Project.DAL.deps.json
+D:\zadatak2\CarsAppPartTwo\Project.DAL\bin\Debug\netcoreapp3.1\Project.DAL.dll
+D:\zadatak2\CarsAppPartTwo\Project.DAL\bin\Debug\netcoreapp3.1\Project.DAL.pdb
+D:\zadatak2\CarsAppPartTwo\Project.DAL\obj\Debug\netcoreapp3.1\Project.DAL.AssemblyInfoInputs.cache
+D:\zadatak2\CarsAppPartTwo\Project.DAL\obj\Debug\netcoreapp3.1\Project.DAL.AssemblyInfo.cs
+D:\zadatak2\CarsAppPartTwo\Project.DAL\obj\Debug\netcoreapp3.1\Project.DAL.csproj.CoreCompileInputs.cache
+D:\zadatak2\CarsAppPartTwo\Project.DAL\obj\Debug\netcoreapp3.1\Project.DAL.dll
+D:\zadatak2\CarsAppPartTwo\Project.DAL\obj\Debug\netcoreapp3.1\Project.DAL.pdb
+D:\zadatak2\CarsAppPartTwo\Project.DAL\obj\Debug\netcoreapp3.1\Project.DAL.csprojAssemblyReference.cache
+D:\zadatak2\CarsAppPartTwo\Project.DAL\bin\Debug\netcoreapp3.1\Project.DAL.runtimeconfig.json
+D:\zadatak2\CarsAppPartTwo\Project.DAL\bin\Debug\netcoreapp3.1\Project.DAL.runtimeconfig.dev.json
+D:\zadatak2\CarsAppPartTwo\Project.DAL\obj\Debug\netcoreapp3.1\Project.DAL.genruntimeconfig.cache

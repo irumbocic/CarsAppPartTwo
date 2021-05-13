@@ -1,0 +1,610 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.WebAPI\\Project.WebAPI.csproj": {}
+  },
+  "projects": {
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj",
+        "projectName": "Project.DAL",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj",
+        "projectName": "Project.Model.Common",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj",
+        "projectName": "Project.Model",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj",
+        "projectName": "Project.Repository.Common",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj",
+        "projectName": "Project.Repository",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\Project.Service.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\Project.Service.Common.csproj",
+        "projectName": "Project.Service.Common",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\Project.Service.Common.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.Service\\Project.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service\\Project.Service.csproj",
+        "projectName": "Project.Service",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service\\Project.Service.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\Project.Service.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\Project.Service.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\zadatak2\\CarsAppPartTwo\\Project.WebAPI\\Project.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zadatak2\\CarsAppPartTwo\\Project.WebAPI\\Project.WebAPI.csproj",
+        "projectName": "Project.WebAPI",
+        "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.WebAPI\\Project.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\ivana\\.nuget\\packages\\",
+        "outputPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.DAL\\Project.DAL.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model.Common\\Project.Model.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Model\\Project.Model.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository.Common\\Project.Repository.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Repository\\Project.Repository.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\Project.Service.Common.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service.Common\\Project.Service.Common.csproj"
+              },
+              "D:\\zadatak2\\CarsAppPartTwo\\Project.Service\\Project.Service.csproj": {
+                "projectPath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Service\\Project.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Autofac.WebApi2": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
