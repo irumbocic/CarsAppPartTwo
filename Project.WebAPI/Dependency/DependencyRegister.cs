@@ -18,9 +18,11 @@ namespace Project.WebAPI.Dependency
         {
             //base.Load(builder); 
 
-            //builder.RegisterType<VehicleModelService>().As<IVehicleModelServiceSTARO>().InstancePerLifetimeScope();
+            builder.RegisterType<VehicleModelService>().As<IVehicleModelService>().InstancePerLifetimeScope();
             builder.RegisterType<VehicleMakeService>().As<IVehicleMakeService>().InstancePerLifetimeScope();
             builder.RegisterType<VehicleMakeRepository>();
+            builder.RegisterType<VehicleModelRepository>();
+
             builder.RegisterGeneric(typeof(VehicleRepository<>))
                     //.As(typeof(IVehicleRepository<>))
                     .InstancePerLifetimeScope();

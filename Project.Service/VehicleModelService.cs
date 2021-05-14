@@ -1,83 +1,61 @@
-﻿//using Service.EfStructure;
-//using Service.Models;
-//using System;
-//using System.Collections.Generic;
-//using System.Text;
-//using Microsoft.EntityFrameworkCore;
-//using System.Threading.Tasks;
-//using System.Linq;
-////using Service.PageSortFilter;
-////using X.PagedList;
-//using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+//using X.PagedList;
+//using Service.PageSortFilter;
+using System.Linq;
+using Project.Repository;
+using Project.Service.Common;
+using Project.Model;
+//using AutoMapper;
+using Project.DAL.Entities;
+using Project.Repository.Repository;
+using Project.Model.Common;
+using AutoMapper;
+using Project.DAL;
 
-//namespace Project.Service
-//{
-//    public class VehicleModelService : IVehicleModelServiceSTARO
-//    {
-//        private readonly VehicleContext context;
+namespace Project.Service
+{
+    public class VehicleModelService : IVehicleModelService
+    {
+        private readonly VehicleModelRepository repository;
+        private readonly IMapper mapper;
 
-//        public VehicleModelService(VehicleContext context)
-//        {
-//            this.context = context;
-//        }
+        public VehicleModelService(VehicleModelRepository repository, IMapper mapper, VehicleContext context)
+        {
+            this.repository = repository;
+            this.mapper = mapper;
+        }
 
-//        public async Task<IPagedList<VehicleModel>> FindAsync(IFilter filter, ISort sort, IPaging<VehicleModel> paging)
-//        {
+        public async Task<VehicleModel> CreteAsync(VehicleModel newItem)
+        {
+            var newItemEntity = await repository.CreteAsync(mapper.Map<VehicleModelEntity>(newItem));
 
+            return mapper.Map<VehicleModel>(newItemEntity);
+        }
+        public async Task<VehicleModel> DeleteAsync(int id)
+        {
 
-//            IQueryable<VehicleModel> VehicleModelList = context.VehicleModels.Include(m => m.VehicleMake);
+            var deleteItem = repository.repository.context.VehicleModels.FirstOrDefault(m => m.Id == id);
+            return mapper.Map<VehicleModel>(await repository.DeleteAsync(deleteItem.Id));
 
+        }
 
-//            var listFilter = filter.Filtering(VehicleModelList, filter);
+        public async Task<VehicleModel> GetAsync(int id)
+        {
 
+            var getItem = repository.repository.context.VehicleModels.FirstOrDefault(m => m.Id == id);
+            return mapper.Map<VehicleModel>(await repository.GetAsync(getItem.Id));
 
-//            var sortModel = sort.Ordering(listFilter, sort);
+        }
 
-//            var pagedModel = await paging.PagingListAsync(sortModel);
+        public async Task<VehicleModel> UpdateAsync(VehicleModel updatedItem)
+        {
+            var updatedItemEntity = await repository.UpdateAsync(mapper.Map<VehicleModelEntity>(updatedItem));
+            return mapper.Map<VehicleModel>(updatedItemEntity);
+        }
 
-//            return pagedModel;
-//        }
-
-
-//        public async Task<VehicleModel> CreateModelAsync(VehicleModel newModel)
-//        {
-//            context.VehicleModels.Add(newModel);
-//            await context.SaveChangesAsync();
-//            return newModel;
-//        }
-
-//        public async Task<VehicleModel> DeleteModelAsync(int id)
-//        {
-//            VehicleModel deletedModel = context.VehicleModels.Find(id);
-//            context.VehicleModels.Remove(deletedModel);
-//            await context.SaveChangesAsync();
-//            //await Task.FromResult(true);
-//            return deletedModel;
-//        }
-//        public async Task<VehicleModel> GetModelAsync(int id)
-//        {
-//            return await context.VehicleModels.FindAsync(id);
-//        }
-
-//        public async Task<VehicleModel> UpdateModelAsync(VehicleModel updatedModel)
-//        {
-//            var models = context.VehicleModels.Attach(updatedModel);
-//            models.State = EntityState.Modified;
-//            await context.SaveChangesAsync();
-//            return updatedModel;
-//        }
-
-//        public async Task<IEnumerable<SelectListItem>> GetListOfMakeNamesAsync()
-//        {
-//            List<VehicleMake> VehicleMakeList = await context.VehicleMakes.ToListAsync();
-
-//            var items = VehicleMakeList.Select(m => new SelectListItem
-//            {
-//                Text = m.Name.ToString(),
-//                Value = m.Id.ToString()
-//            });
-
-//            return items;
-//        }
-//    }
-//}
+    }
+}

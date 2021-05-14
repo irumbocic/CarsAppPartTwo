@@ -14,6 +14,7 @@ namespace Project.WebAPI.Profiles
     {
         public WebApiProfile()
         {
+            //VehicleMake
             CreateMap<VehicleMake, VehicleMakeDto>()
                .ReverseMap();
             CreateMap<VehicleMakeEntity, VehicleMakeDto>()
@@ -21,6 +22,16 @@ namespace Project.WebAPI.Profiles
             CreateMap<VehicleMake, VehicleMakeEntity>()
               .ReverseMap();
             CreateMap<IVehicleMake, VehicleMakeDto>()
+               .ReverseMap();
+
+            //VehicleModel
+            CreateMap<VehicleModel, VehicleModelDto>()
+               .ReverseMap();
+            CreateMap<VehicleModelEntity, VehicleModelDto>()
+              .ReverseMap();
+            CreateMap<VehicleModel, VehicleModelEntity>()
+              .ReverseMap();
+            CreateMap<IVehicleModel, VehicleModelDto>()
                .ReverseMap();
 
         }
