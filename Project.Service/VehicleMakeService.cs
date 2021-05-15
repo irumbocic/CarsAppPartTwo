@@ -29,6 +29,20 @@ namespace Project.Service
             this.mapper = mapper;
         }
 
+
+        public async Task<List<VehicleMake>> FindAsync(string SearchString)
+        { 
+            var makesList = await repository.FindAsync(SearchString);
+
+            List<VehicleMake> listMapped = mapper.Map<List<VehicleMakeEntity>, List<VehicleMake>>(makesList);
+
+
+            //var makesListMapped = mapper.Map<List<VehicleMake>>(makesList);
+
+
+            return listMapped;
+        }
+
         public async Task<VehicleMake> CreteAsync(VehicleMake newItem)
         {
             var newItemEntity = await repository.CreteAsync(mapper.Map<VehicleMakeEntity>(newItem));

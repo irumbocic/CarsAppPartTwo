@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "K1nZv/JeYixMw0RlEe0w5P0F8BQlzULXzTGqJDzvzGG6Cl/iMVqlusv0bygzzJKM/qku50jrc4JgGWJALgXNJQ==",
+  "dgSpecHash": "ADEcnTOMNwt0i/Zx8R0a3zDkRc4VQSYjAlTahFNOmvA/uv51YrSA/6bC237GZMeAoD/7OlSqpMlV0afgrTXmjA==",
   "success": true,
   "projectFilePath": "D:\\zadatak2\\CarsAppPartTwo\\Project.Common\\Project.Common.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ivana\\.nuget\\packages\\jetbrains.annotations\\2021.1.0\\jetbrains.annotations.2021.1.0.nupkg.sha512",
+    "C:\\Users\\ivana\\.nuget\\packages\\x.pagedlist\\8.1.0\\x.pagedlist.8.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

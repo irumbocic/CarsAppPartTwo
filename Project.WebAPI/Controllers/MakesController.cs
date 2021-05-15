@@ -24,18 +24,21 @@ namespace Project.WebAPI.Controllers
             this.mapper = mapper;
         }
 
-        //[Route("GetAll")]
-        //[HttpGet]
-        //public async Task<IActionResult> GetAll()
-        //{
-        //    FilterMake filter = new FilterMake();
-        //    SortMake sort = new SortMake();
-        //    Paging<VehicleMake> paging = new Paging<VehicleMake>();
-        //    var makeList = await vehicleMakeService.FindAsync(filter, sort, paging); // mozda find mora biti drugaciji ovdje, da ga ipak promijenim da bude bez sort, fiter i paginga?
+        [Route("GetAll")]
+        [HttpGet]
+        public async Task<IActionResult> GetAll(
+            [FromQuery(Name = "SearchString")] string SearchString
+            )
+        {
+            //FilterMake filter = new FilterMake();
+            //SortMake sort = new SortMake();
+            //Paging<VehicleMake> paging = new Paging<VehicleMake>();
+            //var makeList = await vehicleMakeService.FindAsync(filter, sort, paging); // mozda find mora biti drugaciji ovdje, da ga ipak promijenim da bude bez sort, fiter i paginga?
 
-        //    var list = mapper.Map<VehicleMakeDto[]>(makeList.ToList()); // ovo sam dodala da mi se prikaz drugacije vidi
-        //    return Ok(list);
-        //}
+            var list = await vehicleMakeService.FindAsync(SearchString); // ovo sam dodala da mi se prikaz drugacije vidi
+
+            return Ok(list);
+        }
 
         [Route("Get/{id}", Name = "Get")]
         [HttpGet]

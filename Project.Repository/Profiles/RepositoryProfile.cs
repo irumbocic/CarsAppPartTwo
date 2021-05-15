@@ -22,6 +22,12 @@ namespace Project.Repository
               .ReverseMap();
             CreateMap<VehicleModel, IVehicleModel>()
               .ReverseMap();
+
+            //CreateMap<List<VehicleModel>, List<VehicleModelEntity>>()
+            // .ReverseMap();
+
+            //CreateMap<List<VehicleMake>, List<VehicleMakeEntity>>()
+            //.ReverseMap();
         }
     }
 

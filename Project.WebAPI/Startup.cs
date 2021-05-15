@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Project.DAL;
 using Project.Repository;
 using Project.WebAPI.Dependency;
@@ -26,6 +28,7 @@ namespace Project.WebAPI
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -33,6 +36,18 @@ namespace Project.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //services.AddControllers()
+            //   .AddNewtonsoftJson(options => {
+            //       options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            //   });
+
+            services.AddControllers()
+                .AddNewtonsoftJson(
+                      options =>
+                      {
+                          options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                      }); 
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -54,7 +69,7 @@ namespace Project.WebAPI
             services.AddSingleton(mapper);
         }
 
-        public void ConfigureContainer(ContainerBuilder builder) 
+        public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new DependencyRegister());
         }
