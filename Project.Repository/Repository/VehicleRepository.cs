@@ -1,4 +1,5 @@
-﻿using Project.DAL;
+﻿using Microsoft.EntityFrameworkCore;
+using Project.DAL;
 using Project.Repository.Common;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project.Repository.Repository
 {
-    public class VehicleRepository<T> : IVehicleRepository<T> where T: class
+    public class VehicleRepository<T> : IVehicleRepository<T> where T : class
     {
         public VehicleContext context; // SMije li biti public?
 
@@ -36,13 +37,23 @@ namespace Project.Repository.Repository
             return await context.Set<T>().FindAsync(id);
         }
 
+        public void Detach(T item)
+        {
+            context.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
+        }
+
         public async Task<T> UpdateAsync(T updatedItem)
         {
-            var item = context.Set<T>().Attach(updatedItem);
-            item.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            
+            context.Set<T>().Update(updatedItem);
+            //updatedItem.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             await context.SaveChangesAsync();
             return updatedItem;
 
+            //var item = context.Set<T>().Attach(updatedItem);
+            //item.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            //await context.SaveChangesAsync();
+            //return updatedItem;
         }
 
     }

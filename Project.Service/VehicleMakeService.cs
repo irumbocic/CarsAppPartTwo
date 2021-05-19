@@ -20,7 +20,7 @@ namespace Project.Service
 {
     public class VehicleMakeService : IVehicleMakeService
     {
-        private readonly VehicleMakeRepository repository;
+        public VehicleMakeRepository repository;
         private readonly IMapper mapper;
 
         public VehicleMakeService(VehicleMakeRepository repository, IMapper mapper, VehicleContext context)
@@ -29,16 +29,15 @@ namespace Project.Service
             this.mapper = mapper;
         }
 
+       
 
-        public async Task<List<VehicleMake>> FindAsync(string SearchString)
+        public async Task<List<VehicleMake>> FindAsync(string SearchString, string SortBy, int? queryPage)
         { 
-            var makesList = await repository.FindAsync(SearchString);
+            var makesList = await repository.FindAsync(SearchString, SortBy, queryPage);
 
             List<VehicleMake> listMapped = mapper.Map<List<VehicleMakeEntity>, List<VehicleMake>>(makesList);
 
-
             //var makesListMapped = mapper.Map<List<VehicleMake>>(makesList);
-
 
             return listMapped;
         }
@@ -68,8 +67,23 @@ namespace Project.Service
         public async Task<VehicleMake> UpdateAsync(VehicleMake updatedItem)
         {
             var updatedItemEntity = await repository.UpdateAsync(mapper.Map<VehicleMakeEntity>(updatedItem));
-            return mapper.Map<VehicleMake>(updatedItemEntity);
+
+            updatedItem = mapper.Map<VehicleMake>(updatedItemEntity);
+            return updatedItem;
+
+
+
+            //var existingItem = await repository.GetAsync((mapper.Map<VehicleMakeEntity>(updatedItem)).Id);
+
+            //repository.repository.context.Update(existingItem);
+            //repository.repository.context.SaveChanges();
+
+            //return mapper.Map<VehicleMake>(existingItem);
         }
 
+        public void Detach(VehicleMake item)
+        {
+            repository.Detach(mapper.Map<VehicleMakeEntity>(item));
+        }
     }
 }

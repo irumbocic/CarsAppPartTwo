@@ -5943,6 +5943,7 @@
       "Autofac >= 6.2.0",
       "Autofac.Extensions.DependencyInjection >= 7.1.0",
       "Autofac.WebApi2 >= 6.0.1",
+      "Microsoft.AspNetCore.JsonPatch >= 5.0.6",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 5.0.6",
       "Project.DAL >= 1.0.0",
       "Project.Model >= 1.0.0",
@@ -6039,6 +6040,10 @@
           "Autofac.WebApi2": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "Microsoft.AspNetCore.JsonPatch": {
+            "target": "Package",
+            "version": "[5.0.6, )"
           },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",

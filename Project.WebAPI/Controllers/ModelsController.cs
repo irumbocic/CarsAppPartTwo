@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Serialization;
 
 namespace Project.WebAPI.Controllers
 {
@@ -23,21 +24,20 @@ namespace Project.WebAPI.Controllers
             this.mapper = mapper;
         }
 
-        //[Route("GetAll")]
-        //[HttpGet]
-        //public async Task<IActionResult> GetAll()
-        //{
-        //    Filter filter = new Filter();
-        //    Sort sort = new Sort();
-        //    Paging<VehicleModel> paging = new Paging<VehicleModel>();
+        [Route("GetAll")]
+        [HttpGet]
+        public async Task<IActionResult> GetAll(
+             [FromQuery(Name = "Search")] string SearchString,
+             [FromQuery(Name = "Sort")] string SortBy,
+             [FromQuery(Name = "page")] int page
+             )
+        {
 
-        //    var modelList = await vehicleModelService.FindAsync(filter, sort, paging);
+            var list = await vehicleModelService.FindAsync(SearchString, SortBy, page); // ovo sam dodala da mi se prikaz drugacije vidi
 
-        //    var list = mapper.Map<VehicleModelDto[]>(modelList).ToList();
-        //    IPagedList<VehicleModelDto> pagedViewModelList = new StaticPagedList<VehicleModelDto>(list, modelList.GetMetaData());
-
-        //    return Ok(pagedViewModelList);
-        //}
+            var mappedList = mapper.Map<List<VehicleModelDto>>(list);
+            return Ok(mappedList);
+        }
 
         [Route("Get/{id}", Name = "GetModel")] // Ovaj RouteAttribute --> Name ne smije biti isti tu i kod Make-a
         [HttpGet]

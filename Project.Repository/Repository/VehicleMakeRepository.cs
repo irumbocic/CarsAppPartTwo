@@ -40,7 +40,7 @@ namespace Project.Repository.Repository
         //}
 
 
-        public async Task<List<VehicleMakeEntity>> FindAsync(string SearhcString)
+        public async Task<List<VehicleMakeEntity>> FindAsync(string SearhcString, string SortBy, int? queryPage)
         {
             var query = (from makes
                          in repository.context.VehicleMakes
@@ -48,10 +48,40 @@ namespace Project.Repository.Repository
 
             if (!string.IsNullOrEmpty(SearhcString))
             {
-                query = query.Where(m => m.Name.Contains(SearhcString));
+                query = query.Where(m => m.Name.Contains(SearhcString) || m.Abrv.Contains(SearhcString));
             }
 
-            return await query.ToListAsync();
+
+            switch (SortBy)
+            {
+                case "Name":
+                    query = query.OrderBy(m => m.Name);
+                    break;
+                case "Abrv":
+                    query = query.OrderBy(m => m.Abrv);
+                    break;
+                default:
+                    query = query.OrderBy(m => m.Id);
+                    break;
+            }
+
+            int perPage = 10;
+            int page = queryPage.GetValueOrDefault(1) == 0 ? 1 : queryPage.GetValueOrDefault(1);
+            int total = query.Count();
+
+            //return await query.ToListAsync();
+
+            return await query.Skip((page - 1) * perPage).Take(perPage).ToListAsync();
+
+
+            //return new // TREBAM LI KREIRATI MOZDA OVAJ OBJEKT?
+            //{
+            //    data = query.Take(perPage).Skip((page - 1) * perPage).ToListAsync(),
+            //    total, 
+            //    page,
+            //    lastPage = total / perPage
+            //};
+
         }
 
         public async Task<VehicleMakeEntity> CreteAsync(VehicleMakeEntity newItem)
@@ -72,6 +102,11 @@ namespace Project.Repository.Repository
         public async Task<VehicleMakeEntity> UpdateAsync(VehicleMakeEntity updatedItem)
         {
             return await repository.UpdateAsync(updatedItem);
+        }
+
+        public void Detach(VehicleMakeEntity item)
+        {
+            repository.Detach(item);
         }
     }
 }

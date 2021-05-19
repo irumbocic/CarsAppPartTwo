@@ -13,7 +13,8 @@ namespace Project.Service.Common
         Task<VehicleMake> DeleteAsync(int id);
         Task<VehicleMake> GetAsync(int id);
         Task<VehicleMake> UpdateAsync(VehicleMake updatedItem);
+        Task<List<VehicleMake>> FindAsync(string SearchString, string SortBy, int? queryPage);
+        public void Detach(VehicleMake item);
 
-        Task<List<VehicleMake>> FindAsync(string SearchString);
     }
 }

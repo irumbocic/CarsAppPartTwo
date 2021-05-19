@@ -9,5 +9,6 @@ namespace Project.Repository.Common
         Task<T> DeleteAsync(int id);
         Task<T> GetAsync(int id);
         Task<T> UpdateAsync(T updatedItem);
+        public void Detach(T item);
     }
 }

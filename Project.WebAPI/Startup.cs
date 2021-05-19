@@ -37,17 +37,19 @@ namespace Project.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //services.AddControllers()
-            //   .AddNewtonsoftJson(options => {
-            //       options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            //   });
+            services.AddControllers() // Ovo sam dodala zbog PATCH-a
+               .AddNewtonsoftJson(options =>
+               {
+                   options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+               });
 
-            services.AddControllers()
-                .AddNewtonsoftJson(
-                      options =>
-                      {
-                          options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                      }); 
+            //services.AddControllers()
+            //    .AddNewtonsoftJson(
+            //          options =>
+            //          {
+            //              options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            //          });
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

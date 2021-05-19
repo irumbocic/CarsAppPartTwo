@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Project.DAL.Entities;
 using Project.Model;
@@ -8,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project.WebAPI.Controllers
 {
@@ -27,7 +30,10 @@ namespace Project.WebAPI.Controllers
         [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll(
-            [FromQuery(Name = "SearchString")] string SearchString
+            [FromQuery(Name = "Search")] string SearchString,
+            [FromQuery(Name = "Sort")] string SortBy,
+            [FromQuery(Name = "page")] int page
+
             )
         {
             //FilterMake filter = new FilterMake();
@@ -35,7 +41,9 @@ namespace Project.WebAPI.Controllers
             //Paging<VehicleMake> paging = new Paging<VehicleMake>();
             //var makeList = await vehicleMakeService.FindAsync(filter, sort, paging); // mozda find mora biti drugaciji ovdje, da ga ipak promijenim da bude bez sort, fiter i paginga?
 
-            var list = await vehicleMakeService.FindAsync(SearchString); // ovo sam dodala da mi se prikaz drugacije vidi
+            var list = await vehicleMakeService.FindAsync(SearchString, SortBy, page); // ovo sam dodala da mi se prikaz drugacije vidi
+
+            var mappedList = mapper.Map<List<VehicleMakeDto>>(list);
 
             return Ok(list);
         }
@@ -65,41 +73,50 @@ namespace Project.WebAPI.Controllers
             return CreatedAtRoute(nameof(Get), new { Id = readMakeDto.Id }, readMakeDto);
         }
 
-        //[Route("Put/{id}")]
-        [HttpPut("{id}")] // OVO MI NE RADI- ISPRAVI!
+        [Route("UpdateMake/{id}")]
+        [HttpPut("{id}")] 
 
-        public async Task<IActionResult> Update(int id, VehicleMakeDto updatedMakeDto)
+        public async Task<IActionResult> UpdateMake(int id, UpdateMakeDto updatedMakeDto)
+        {
+            var selectedMake = await vehicleMakeService.GetAsync(id);
+            
+            if (selectedMake == null)
+            {
+                return NotFound();
+            }
+
+            mapper.Map(updatedMakeDto, selectedMake);
+            await vehicleMakeService.UpdateAsync(selectedMake);
+            return Ok();
+        }
+
+
+        [Route("Update/{id}")]
+        [HttpPatch] // NE radi, moram skuziti kako se detacha entity, zasto mu to smeta, mogu li na neki drugi nacin Update Repository metodu napraviti...
+        public async Task<IActionResult> Update(int id, JsonPatchDocument<VehicleMakeDto> patchDoc)
         {
             var selectedMake = await vehicleMakeService.GetAsync(id);
             if (selectedMake == null)
             {
                 return NotFound();
             }
-            var updatedMake = await vehicleMakeService.UpdateAsync(mapper.Map<VehicleMake>(updatedMakeDto));
-            return Ok(mapper.Map<VehicleMakeDto>(updatedMake));
+
+            var makeToPatch = mapper.Map<VehicleMakeDto>(selectedMake);
+            patchDoc.ApplyTo(makeToPatch, ModelState);
+
+            if (!TryValidateModel(makeToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            var itemForUpdate = mapper.Map<VehicleMake>(makeToPatch);
+
+            var updatedMake = await vehicleMakeService.UpdateAsync(itemForUpdate);
+
+            return NoContent();
         }
 
-        //[HttpPatch("{id}")] // NI OVAJ MI NE RADI... MALO RAZMISLI O PROMJENI OVIH METODA ILI UpdateMake metode iz Servicea!
-        //public async Task<IActionResult> PartialUpdate(int id, JsonPatchDocument<VehicleMakeDto> patchDoc)
-        //{
-        //    var selectedMake = await vehicleMakeService.GetAsync(id);
-        //    if (selectedMake == null)
-        //    {
-        //        return NotFound();
-        //    }
 
-        //    var makeToPatch = mapper.Map<VehicleMakeDto>(selectedMake);
-        //    patchDoc.ApplyTo(makeToPatch, ModelState);
-
-        //    if (!TryValidateModel(makeToPatch))
-        //    {
-        //        return ValidationProblem(ModelState);
-        //    }
-
-        //    var updatedMake = await vehicleMakeService.UpdateAsync(mapper.Map<VehicleMakeEntity>(makeToPatch));
-
-        //    return NoContent();
-        //}
         [Route("Delete/{id}")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
