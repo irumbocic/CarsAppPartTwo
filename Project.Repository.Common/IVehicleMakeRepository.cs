@@ -12,6 +12,5 @@ namespace Project.Repository.Common
         Task<VehicleMakeEntity> GetAsync(int id);
         Task<VehicleMakeEntity> UpdateAsync(VehicleMakeEntity updatedItem);
         Task<List<VehicleMakeEntity>> FindAsync(string SearchString, string SortBy, int? queryPage);
-        public void Detach(VehicleMakeEntity item);
     }
 }

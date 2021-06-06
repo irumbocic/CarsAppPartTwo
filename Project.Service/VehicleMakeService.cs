@@ -23,13 +23,11 @@ namespace Project.Service
         public VehicleMakeRepository repository;
         private readonly IMapper mapper;
 
-        public VehicleMakeService(VehicleMakeRepository repository, IMapper mapper, VehicleContext context)
+        public VehicleMakeService(VehicleMakeRepository repository, IMapper mapper)
         {
             this.repository = repository;
             this.mapper = mapper;
         }
-
-       
 
         public async Task<List<VehicleMake>> FindAsync(string SearchString, string SortBy, int? queryPage)
         { 
@@ -59,18 +57,28 @@ namespace Project.Service
         public async Task<VehicleMake> GetAsync(int id)
         {
 
-            var getItem = repository.repository.context.VehicleMakes.FirstOrDefault(m => m.Id == id);
-            return mapper.Map<VehicleMake>(await repository.GetAsync(getItem.Id));
-            
+            //var getItem = repository.repository.context.VehicleMakes.FirstOrDefault(m => m.Id == id);
+            //return mapper.Map<VehicleMake>(await repository.GetAsync(getItem.Id));
+
+            //var getItem = repository.GetAsync(id);
+            return mapper.Map<VehicleMake>(await repository.GetAsync(id));
+
         }
 
         public async Task<VehicleMake> UpdateAsync(VehicleMake updatedItem)
         {
             var updatedItemEntity = await repository.UpdateAsync(mapper.Map<VehicleMakeEntity>(updatedItem));
+            return mapper.Map<VehicleMake>(updatedItemEntity);
+            
 
-            updatedItem = mapper.Map<VehicleMake>(updatedItemEntity);
-            return updatedItem;
 
+            //var item = repository.repository.context.VehicleMakes.Update(mapper.Map<VehicleMakeEntity>(updatedItem));
+
+            //item.State = EntityState.Modified;
+
+            //await repository.repository.context.SaveChangesAsync();
+
+            //return updatedItem;
 
 
             //var existingItem = await repository.GetAsync((mapper.Map<VehicleMakeEntity>(updatedItem)).Id);
@@ -83,7 +91,7 @@ namespace Project.Service
 
         public void Detach(VehicleMake item)
         {
-            repository.Detach(mapper.Map<VehicleMakeEntity>(item));
+            throw new NotImplementedException();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Project.Model
         [Key]
         public int Id { get; set; }
         [ForeignKey("VehicleMake")]
-        [Required]
+        //[Required]
         public int MakeId { get; set; }
         [Required]
         public string Name { get; set; }

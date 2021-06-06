@@ -14,7 +14,6 @@ namespace Project.Service.Common
         Task<VehicleMake> GetAsync(int id);
         Task<VehicleMake> UpdateAsync(VehicleMake updatedItem);
         Task<List<VehicleMake>> FindAsync(string SearchString, string SortBy, int? queryPage);
-        public void Detach(VehicleMake item);
 
     }
 }

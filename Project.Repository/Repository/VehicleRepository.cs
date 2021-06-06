@@ -37,7 +37,7 @@ namespace Project.Repository.Repository
             return await context.Set<T>().FindAsync(id);
         }
 
-        public void Detach(T item)
+        public void Detach(T item) // Ovo mi ne treba --> nije pomoglo kod problema s updateom
         {
             context.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Detached;
         }
@@ -45,8 +45,8 @@ namespace Project.Repository.Repository
         public async Task<T> UpdateAsync(T updatedItem)
         {
             
-            context.Set<T>().Update(updatedItem);
-            //updatedItem.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var item = context.Set<T>().Update(updatedItem); // ne izvrsava mi ovu liniju koda, a ne baca gresku ????
+            item.State = EntityState.Modified;
             await context.SaveChangesAsync();
             return updatedItem;
 
@@ -54,6 +54,11 @@ namespace Project.Repository.Repository
             //item.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             //await context.SaveChangesAsync();
             //return updatedItem;
+        }
+
+        public async void Save() //prebaci sve da se preko ovoga napravi save... ili ne treba?
+        {
+            await context.SaveChangesAsync();
         }
 
     }

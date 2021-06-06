@@ -24,12 +24,12 @@ namespace Project.WebAPI.Profiles
             CreateMap<IVehicleMake, VehicleMakeDto>()
                .ReverseMap();
 
-            CreateMap<IVehicleMake, UpdateMakeDto>()
-              .ReverseMap();
-            CreateMap<VehicleMakeEntity, UpdateMakeDto>()
-              .ReverseMap();
-            CreateMap<VehicleMake, UpdateMakeDto>()
-              .ReverseMap();
+            //CreateMap<IVehicleMake, UpdateMakeDto>()
+            //  .ReverseMap();
+            //CreateMap<VehicleMakeEntity, UpdateMakeDto>()
+            //  .ReverseMap();
+            //CreateMap<VehicleMake, UpdateMakeDto>()
+            //  .ReverseMap();
 
             //VehicleModel
             CreateMap<VehicleModel, VehicleModelDto>()

@@ -22,11 +22,13 @@ namespace Project.Service
     {
         private readonly VehicleModelRepository repository;
         private readonly IMapper mapper;
+        private readonly UnitOfWork unitOfWork;
 
-        public VehicleModelService(VehicleModelRepository repository, IMapper mapper, VehicleContext context)
+        public VehicleModelService(VehicleModelRepository repository, IMapper mapper, UnitOfWork unitOfWork)
         {
             this.repository = repository;
             this.mapper = mapper;
+            this.unitOfWork = unitOfWork;
         }
 
 
@@ -43,7 +45,13 @@ namespace Project.Service
 
         public async Task<VehicleModel> CreteAsync(VehicleModel newItem)
         {
-            var newItemEntity = await repository.CreteAsync(mapper.Map<VehicleModelEntity>(newItem));
+            //PRije UnitOfWorka
+            //var newItemEntity = await repository.CreteAsync(mapper.Map<VehicleModelEntity>(newItem));
+
+            //return mapper.Map<VehicleModel>(newItemEntity);
+
+
+            var newItemEntity = await unitOfWork.CreateAsync(mapper.Map<VehicleModelEntity>(newItem), null);
 
             return mapper.Map<VehicleModel>(newItemEntity);
         }

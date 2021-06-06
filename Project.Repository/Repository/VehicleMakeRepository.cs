@@ -104,9 +104,5 @@ namespace Project.Repository.Repository
             return await repository.UpdateAsync(updatedItem);
         }
 
-        public void Detach(VehicleMakeEntity item)
-        {
-            repository.Detach(item);
-        }
     }
 }

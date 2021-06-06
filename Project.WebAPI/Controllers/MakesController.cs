@@ -74,9 +74,9 @@ namespace Project.WebAPI.Controllers
         }
 
         [Route("UpdateMake/{id}")]
-        [HttpPut("{id}")] 
+        [HttpPut("{id}")]  // NE RADI!! SKUZITI ZASTO 
 
-        public async Task<IActionResult> UpdateMake(int id, UpdateMakeDto updatedMakeDto)
+        public async Task<IActionResult> UpdateMake(int id, VehicleMakeDto updatedMakeDto)
         {
             var selectedMake = await vehicleMakeService.GetAsync(id);
             

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Serialization;
+using Project.Model;
 
 namespace Project.WebAPI.Controllers
 {
@@ -39,7 +40,7 @@ namespace Project.WebAPI.Controllers
             return Ok(mappedList);
         }
 
-        [Route("Get/{id}", Name = "GetModel")] // Ovaj RouteAttribute --> Name ne smije biti isti tu i kod Make-a
+        [Route("Get/{id}", Name = "GetModel")] // Ovaj RouteAttribute --> Name ne smije biti isti tu i kod Make-a, PAZI - STAVI KOD MAKE-a GetMake, da bude isto kao i ovdje
         [HttpGet]
         public async Task<IActionResult> GetModel(int id)
         {
@@ -51,18 +52,32 @@ namespace Project.WebAPI.Controllers
             return Ok(modelItem);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Post(VehicleModelDto newModelDto)
-        //{
-        //    // OVO NIJE OK!!!! Moram srediti kako dodati MakeID/VehicleMake za model koji dodajem/kreiram
+        [HttpPost] // NE RADI --> PROVJERITI ZASTO :/ UPdate: Radi ali baca neku gresku --> provjeriti!
+        public async Task<IActionResult> Create(VehicleModelDto newModelDto)
+        {
+            var newModel = await vehicleModelService.CreteAsync(mapper.Map<VehicleModel>(newModelDto));
 
-        //    var newModel = await vehicleModelService.CreateModelAsync(mapper.Map<VehicleModel>(newModelDto));
+            var readModelDto = mapper.Map<VehicleMakeDto>(newModel);
 
-        //    var readModelDto = mapper.Map<VehicleModelDto>(newModel);
+            return Ok();
+            //return CreatedAtRoute(nameof(GetModel), new { Id = readModelDto.Id }, readModelDto);
+        }
 
-        //    return CreatedAtRoute(nameof(GetModel), new { Id = readModelDto.Id }, readModelDto);
 
-        //}
+        [Route("Delete/{id}")]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var selectedModel = await vehicleModelService.GetAsync(id);
+            if (selectedModel == null)
+            {
+                return NotFound();
+            }
+            var deletedMake = await vehicleModelService.DeleteAsync(id);
+
+            return NoContent();
+
+        }
 
     }
 }
